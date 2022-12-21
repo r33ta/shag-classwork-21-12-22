@@ -68,7 +68,7 @@ public partial class Form1 : Form
         GetVideoadaptersList();
         GetMemoryList();
     }
-    //~Form1() => con.Close();
+    ~Form1() => con.Close();
 
     public void GetComputersList() 
     { 
