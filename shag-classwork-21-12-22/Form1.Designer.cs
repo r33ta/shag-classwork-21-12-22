@@ -143,7 +143,7 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(12, 27);
+            this.nameBox.Location = new System.Drawing.Point(12, 25);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(271, 23);
             this.nameBox.TabIndex = 7;
