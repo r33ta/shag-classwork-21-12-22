@@ -185,4 +185,23 @@ public partial class Form1 : Form
 
         GetComputersList();
     }
+
+    private void list_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Computers computer = (Computers)list.SelectedItem;
+
+        nameBox.Text = computer.name;
+
+        for (int i = 0; i < processorsBox.Items.Count; ++i)
+            if (((Processors)processorsBox.Items[i]).id == computer.processor_id)
+                processorsBox.SelectedIndex = i;
+
+        for (int i = 0; i < videoadaptersBox.Items.Count; ++i)
+            if (((Videoadapters)videoadaptersBox.Items[i]).id == computer.videoadapter_id)
+                videoadaptersBox.SelectedIndex = i;
+
+        for (int i = 0; i < memoryBox.Items.Count; ++i)
+            if (((Memory)memoryBox.Items[i]).id == computer.memory_id)
+                memoryBox.SelectedIndex = i;
+    }
 }
