@@ -4,7 +4,7 @@ namespace shag_classwork_21_12_22;
 
 public partial class Form1 : Form
 {
-    private string conStr = "Server=192.168.88.30;" +
+    public static string conStr = "Server=192.168.88.30;" +
     "Database=Components;User Id=root;Password=root;";
 
     private string cmdSelectComputers = "SELECT * FROM Computers";
@@ -12,27 +12,25 @@ public partial class Form1 : Form
     private string cmdSelectVideoadapters = "SELECT * FROM Videoadapters";
     private string cmdSelectMemory = "SELECT * FROM Memory";
 
-    private List<Processors> processors;
-    private List<Videoadapters> videoadapters;
-    private List<Memory> memory;
-
     private SqlConnection con;
+
+    public delegate void GetInfo();
 
     class Computers
     {
         public int id;
-        public string name;
+        public string? name;
         public int processor_id;
         public int videoadapter_id;
         public int memory_id;
 
-        public override string ToString() => name;
+        public override string ToString() => name ?? "PC";
     }
     
     class Processors
     {
         public int id;
-        public string name;
+        public string? name;
         public double frequency;
         public int cores;
 
@@ -41,7 +39,7 @@ public partial class Form1 : Form
     class Videoadapters
     {
         public int id;
-        public string name;
+        public string? name;
         public int memory_size;
         public double frequency;
 
@@ -50,7 +48,7 @@ public partial class Form1 : Form
     class Memory
     {
         public int id;
-        public string name;
+        public string? name;
         public int memory_size;
 
         public override string ToString() => $"{name}, {memory_size}GB";
@@ -203,5 +201,29 @@ public partial class Form1 : Form
         for (int i = 0; i < memoryBox.Items.Count; ++i)
             if (((Memory)memoryBox.Items[i]).id == computer.memory_id)
                 memoryBox.SelectedIndex = i;
+    }
+
+    private void AddProcessorBtn_Click(object sender, EventArgs e)
+    {
+        GetInfo getInfo = new(GetProcessorsList);
+
+        Form2 form = new(getInfo);
+        form.Show();
+    }
+
+    private void AddVideoadapterBtn_Click(object sender, EventArgs e)
+    {
+        GetInfo getInfo = new(GetVideoadaptersList);
+
+        Form3 form = new(getInfo);
+        form.Show();
+    }
+
+    private void AddMemoryBtn_Click(object sender, EventArgs e)
+    {
+        GetInfo getInfo = new(GetMemoryList);
+
+        Form4 form = new(getInfo);
+        form.Show();
     }
 }

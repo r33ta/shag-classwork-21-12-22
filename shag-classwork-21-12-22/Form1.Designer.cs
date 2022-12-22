@@ -98,6 +98,7 @@
             this.AddProcessorBtn.TabIndex = 5;
             this.AddProcessorBtn.Text = "Добавить процессор в БД";
             this.AddProcessorBtn.UseVisualStyleBackColor = true;
+            this.AddProcessorBtn.Click += new System.EventHandler(this.AddProcessorBtn_Click);
             // 
             // processorsBox
             // 
@@ -131,6 +132,7 @@
             this.AddVideoadapterBtn.TabIndex = 5;
             this.AddVideoadapterBtn.Text = "Добавить видеокарту в БД";
             this.AddVideoadapterBtn.UseVisualStyleBackColor = true;
+            this.AddVideoadapterBtn.Click += new System.EventHandler(this.AddVideoadapterBtn_Click);
             // 
             // AddMemoryBtn
             // 
@@ -140,6 +142,7 @@
             this.AddMemoryBtn.TabIndex = 5;
             this.AddMemoryBtn.Text = "Добавить оперативную память в БД";
             this.AddMemoryBtn.UseVisualStyleBackColor = true;
+            this.AddMemoryBtn.Click += new System.EventHandler(this.AddMemoryBtn_Click);
             // 
             // nameBox
             // 
