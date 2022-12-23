@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using static shag_classwork_21_12_22.Form1;
+
 namespace shag_classwork_21_12_22;
 
 public partial class Form5 : Form
@@ -15,24 +16,24 @@ public partial class Form5 : Form
         "INNER JOIN Processors ON Processors.id = Computers.processor_id " +
         "INNER JOIN Videoadapters ON Videoadapters.id = Computers.videoadapter_id " +
         "INNER JOIN Memory ON Memory.id = Computers.memory_id " +
-        "WHERE Computers.id = @id;";
+        "WHERE Computers.id = @id";
 
     class Result
     {
         public string? name;
 
         public string? p_name;
-        public double p_frequency;
-        public int cores;
+        public double? p_frequency;
+        public int? cores;
 
         public string? v_name;
-        public int v_memory_size;
-        public double v_frequency;
+        public int? v_memory_size;
+        public double? v_frequency;
 
         public string? m_name;
-        public int m_memory_size;
+        public int? m_memory_size;
     }
-    Result res;
+    Result? res;
 
     public Form5(Computers computer)
     {
@@ -70,21 +71,19 @@ public partial class Form5 : Form
             }
         }
 
-        if (res != null)
-        {
-            pc_name.Text = $"Сведения о {res.name}:";
+        
+        pc_name.Text = $"Сведения о {res?.name}:";
 
-            p_name.Text = res.p_name;
-            p_freq.Text = $"{res.p_frequency} ГГц";
-            p_cores.Text = res.cores.ToString();
+        p_name.Text = res?.p_name;
+        p_freq.Text = $"{res?.p_frequency} ГГц";
+        p_cores.Text = res?.cores.ToString();
 
-            v_name.Text = res.v_name;
-            v_memory.Text = $"{res.v_memory_size} ГБ";
-            v_freq.Text = $"{res.v_frequency} мГц";
+        v_name.Text = res?.v_name;
+        v_memory.Text = $"{res?.v_memory_size} ГБ";
+        v_freq.Text = $"{res?.v_frequency} мГц";
 
-            m_name.Text = res.m_name;
-            m_memory.Text = $"{res.m_memory_size} ГБ";
-        }
+        m_name.Text = res?.m_name;
+        m_memory.Text = $"{res?.m_memory_size} ГБ";
     }
     ~Form5() => con.Close();
 }
