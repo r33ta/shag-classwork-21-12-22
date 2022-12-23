@@ -72,18 +72,18 @@ public partial class Form5 : Form
 
         if (res != null)
         {
-            pc_name.Text = $"Сведения об {res.name}:";
+            pc_name.Text = $"Сведения о {res.name}:";
 
             p_name.Text = res.p_name;
-            p_freq.Text = $"{res.p_frequency}ГГц";
+            p_freq.Text = $"{res.p_frequency} ГГц";
             p_cores.Text = res.cores.ToString();
 
             v_name.Text = res.v_name;
-            v_memory.Text = $"{res.v_memory_size}ГБ";
-            v_freq.Text = $"{res.v_frequency}мГц";
+            v_memory.Text = $"{res.v_memory_size} ГБ";
+            v_freq.Text = $"{res.v_frequency} мГц";
 
             m_name.Text = res.m_name;
-            m_memory.Text = $"{res.m_memory_size}ГБ";
+            m_memory.Text = $"{res.m_memory_size} ГБ";
         }
     }
     ~Form5() => con.Close();
