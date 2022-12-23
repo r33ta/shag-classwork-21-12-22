@@ -16,7 +16,7 @@ public partial class Form1 : Form
 
     public delegate void GetInfo();
 
-    class Computers
+    public class Computers
     {
         public int id;
         public string? name;
@@ -27,7 +27,7 @@ public partial class Form1 : Form
         public override string ToString() => name ?? "PC";
     }
     
-    class Processors
+    public class Processors
     {
         public int id;
         public string? name;
@@ -36,7 +36,7 @@ public partial class Form1 : Form
 
         public override string ToString() => $"{name} {frequency}GHz";
     }
-    class Videoadapters
+    public class Videoadapters
     {
         public int id;
         public string? name;
@@ -45,7 +45,7 @@ public partial class Form1 : Form
 
         public override string ToString() => $"{name}, {memory_size}GB";
     }
-    class Memory
+    public class Memory
     {
         public int id;
         public string? name;
@@ -225,5 +225,14 @@ public partial class Form1 : Form
 
         Form4 form = new(getInfo);
         form.Show();
+    }
+
+    private void list_DoubleClick(object sender, EventArgs e)
+    {
+        if (list.SelectedItems.Count > 0)
+        {
+            Form5 form = new((Computers)list.SelectedItem);
+            form.Show();
+        }
     }
 }
