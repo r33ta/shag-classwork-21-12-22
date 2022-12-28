@@ -15,6 +15,7 @@ public partial class Form1 : Form
     private SqlConnection con;
 
     public delegate void GetInfo();
+    public delegate void UpdateForm(string _name, string _avatar, string _jwt);
 
     public class Computers
     {
@@ -26,7 +27,6 @@ public partial class Form1 : Form
 
         public override string ToString() => name ?? "PC";
     }
-    
     public class Processors
     {
         public int id;
@@ -53,6 +53,13 @@ public partial class Form1 : Form
 
         public override string ToString() => $"{name}, {memory_size}GB";
     }
+    public class User
+    {
+        public string? avatar { get; set; }
+        public string? jwt { get; set; }
+        public string? name { get; set; }
+    }
+    User user;
 
     public Form1()
     {
@@ -65,11 +72,15 @@ public partial class Form1 : Form
         GetProcessorsList();
         GetVideoadaptersList();
         GetMemoryList();
+
+        name.Hide();
+        pictureBox1.Hide();
+
     }
     ~Form1() => con.Close();
 
-    public void GetComputersList() 
-    { 
+    public void GetComputersList()
+    {
         list.Items.Clear();
 
         SqlCommand command = new(cmdSelectComputers, con);
@@ -94,7 +105,7 @@ public partial class Form1 : Form
 
         }
     }
-    public void GetProcessorsList() 
+    public void GetProcessorsList()
     {
         processorsBox.Items.Clear();
 
@@ -118,7 +129,7 @@ public partial class Form1 : Form
             }
         }
     }
-    public void GetVideoadaptersList() 
+    public void GetVideoadaptersList()
     {
         videoadaptersBox.Items.Clear();
 
@@ -183,7 +194,6 @@ public partial class Form1 : Form
 
         GetComputersList();
     }
-
     private void list_SelectedIndexChanged(object sender, EventArgs e)
     {
         Computers computer = (Computers)list.SelectedItem;
@@ -234,5 +244,30 @@ public partial class Form1 : Form
             Form5 form = new((Computers)list.SelectedItem);
             form.Show();
         }
+    }
+
+    private void LoginBtn_Click(object sender, EventArgs e)
+    {
+        UpdateForm updateForm = new(LoginUpdate);
+
+        Form6 form = new(updateForm);
+        form.Show();
+    }
+
+    private void LoginUpdate(string _name, string _avatar, string _jwt)
+    {
+        name.Text = _name;
+        pictureBox1.ImageLocation = _avatar;
+
+        user = new User
+        {
+            avatar = _avatar,
+            jwt = _jwt,
+            name = _name
+        };
+
+        name.Show();
+        pictureBox1.Show();
+        LoginBtn.Hide();
     }
 }
