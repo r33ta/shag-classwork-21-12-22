@@ -87,6 +87,7 @@
             // 
             // AddComputerBtn
             // 
+            this.AddComputerBtn.Enabled = false;
             this.AddComputerBtn.Location = new System.Drawing.Point(12, 235);
             this.AddComputerBtn.Name = "AddComputerBtn";
             this.AddComputerBtn.Size = new System.Drawing.Size(271, 23);
@@ -97,6 +98,7 @@
             // 
             // AddProcessorBtn
             // 
+            this.AddProcessorBtn.Enabled = false;
             this.AddProcessorBtn.Location = new System.Drawing.Point(12, 355);
             this.AddProcessorBtn.Name = "AddProcessorBtn";
             this.AddProcessorBtn.Size = new System.Drawing.Size(271, 23);
@@ -131,6 +133,7 @@
             // 
             // AddVideoadapterBtn
             // 
+            this.AddVideoadapterBtn.Enabled = false;
             this.AddVideoadapterBtn.Location = new System.Drawing.Point(12, 384);
             this.AddVideoadapterBtn.Name = "AddVideoadapterBtn";
             this.AddVideoadapterBtn.Size = new System.Drawing.Size(271, 23);
@@ -141,6 +144,7 @@
             // 
             // AddMemoryBtn
             // 
+            this.AddMemoryBtn.Enabled = false;
             this.AddMemoryBtn.Location = new System.Drawing.Point(12, 413);
             this.AddMemoryBtn.Name = "AddMemoryBtn";
             this.AddMemoryBtn.Size = new System.Drawing.Size(271, 23);

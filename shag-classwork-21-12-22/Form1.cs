@@ -269,5 +269,11 @@ public partial class Form1 : Form
         name.Show();
         pictureBox1.Show();
         LoginBtn.Hide();
+
+        AddComputerBtn.Enabled = true;
+
+        AddProcessorBtn.Enabled = true;
+        AddVideoadapterBtn.Enabled = true;
+        AddMemoryBtn.Enabled = true;
     }
 }
