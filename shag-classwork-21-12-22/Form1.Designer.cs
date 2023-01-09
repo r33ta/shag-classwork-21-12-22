@@ -51,7 +51,7 @@
             // 
             this.list.FormattingEnabled = true;
             this.list.ItemHeight = 15;
-            this.list.Location = new System.Drawing.Point(305, 72);
+            this.list.Location = new System.Drawing.Point(305, 12);
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(353, 364);
             this.list.TabIndex = 0;
@@ -167,7 +167,7 @@
             // 
             // LoginBtn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(504, 12);
+            this.LoginBtn.Location = new System.Drawing.Point(504, 404);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(154, 27);
             this.LoginBtn.TabIndex = 8;
@@ -177,9 +177,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(601, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(600, 382);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 56);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -187,7 +187,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(467, 18);
+            this.name.Location = new System.Drawing.Point(504, 421);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(31, 15);
             this.name.TabIndex = 10;
