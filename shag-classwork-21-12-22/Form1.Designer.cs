@@ -187,7 +187,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(504, 421);
+            this.name.Location = new System.Drawing.Point(504, 404);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(31, 15);
             this.name.TabIndex = 10;

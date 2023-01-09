@@ -41,7 +41,6 @@ public partial class Form6 : Form
             updateForm(_name: result.name, _avatar: result.avatar, _jwt: result.jwt);
             Close();
         }
-
     }
 
     private void exitBtn_Click(object sender, EventArgs e) => Close();
