@@ -21,9 +21,10 @@ public partial class Form6 : Form
     }
     private void loginBtn_Click(object sender, EventArgs e)
     {
-        var login = new Login() { 
-            name = loginBox.Text, 
-            password = passwordBox.Text 
+        var login = new Login()
+        {
+            name = loginBox.Text,
+            password = passwordBox.Text
         };
 
         string json = JsonConvert.SerializeObject(login);
